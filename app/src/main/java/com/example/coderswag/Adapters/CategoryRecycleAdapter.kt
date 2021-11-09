@@ -16,16 +16,16 @@ import java.util.zip.Inflater
 class CategoryRecycleAdapter(val context: Context, val categories: List<Category> ,val itemClick:(Category)->Unit):RecyclerView.Adapter<CategoryRecycleAdapter.Holder>() {
 
 //below work done by it self
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder { //second it will creeate a view by inflating layout
         val view =LayoutInflater.from(context).inflate(R.layout.category_list_item,parent,false)
     return Holder(view,itemClick)
     }
 
-    override fun onBindViewHolder(holder: Holder, position: Int) {
+    override fun onBindViewHolder(holder: Holder, position: Int) { // third its gonna bind our custom
         holder.bindCategory(categories[position],context)
     }
 
-    override fun getItemCount(): Int {
+    override fun getItemCount(): Int { //1st it will count items
         return categories.count()
     }
     inner class Holder(itemView: View,val itemClick:(Category)->Unit) : RecyclerView.ViewHolder(itemView) {
