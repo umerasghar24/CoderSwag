@@ -7,7 +7,8 @@ object DataService { ///singleton onject //create arrays that will hold all of t
     val categories = listOf(
         Category("SHIRTS","shirtimage") ,Category("HOODIES","hoodieimage"),
         //image names are comming from drawable
-        Category("HATS","hatimage")
+        Category("HATS","hatimage"),
+            Category("DIGITAL","digitalgoodsimage")
 
         //class category in models
 
