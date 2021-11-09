@@ -8,6 +8,14 @@ object DataService { ///singleton onject //create arrays that will hold all of t
         Category("SHIRTS","shirtimage") ,Category("HOODIES","hoodieimage"),
         //image names are comming from drawable
         Category("HATS","hatimage"),
+            Category("DIGITAL","digitalgoodsimage"),
+            Category("SHIRTS","shirtimage") ,Category("HOODIES","hoodieimage"),
+            //image names are comming from drawable
+            Category("HATS","hatimage"),
+            Category("DIGITAL","digitalgoodsimage"),
+            Category("SHIRTS","shirtimage") ,Category("HOODIES","hoodieimage"),
+            //image names are comming from drawable
+            Category("HATS","hatimage"),
             Category("DIGITAL","digitalgoodsimage")
 
         //class category in models
