@@ -12,9 +12,8 @@ import com.example.coderswag.Model.Category
 import com.example.coderswag.R
 import com.example.coderswag.Services.DataService.categories
 
-class CategoryAdapter(context: Context ,categories:List<Category>) : BaseAdapter() {
-    val context = context
-    val category = categories //created variables to hold data
+class CategoryAdapter(val context: Context, val category: List<Category>) : BaseAdapter() {
+    ///created variables to hold data
     override fun getCount(): Int {
        return category.count()
     }
