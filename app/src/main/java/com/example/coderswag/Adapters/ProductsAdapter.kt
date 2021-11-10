@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.coderswag.Model.Product
 import com.example.coderswag.R
@@ -20,19 +21,20 @@ class ProductsAdapter(val context: Context,val products:List<Product>):RecyclerV
     }
 
     override fun onBindViewHolder(holder: ProductHolder, position: Int) {
-        holder.bindProducts(products[position],context)
+        holder.bindProduct(products[position],context)
     }
 
     override fun getItemCount(): Int {
        return products.count()
+
     }
     inner  class ProductHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        val productsImage =itemView.findViewById<ImageView>(R.id.productImage)
-        val productName =itemView.findViewById<TextView>(R.id.productName)
+        val productsImage=itemView.findViewById<ImageView>(R.id.productImage)
+        val productName=itemView.findViewById<TextView>(R.id.productName)
         //      val productsImage = itemView.productImage //it could be find view by id
 //      val productName =itemView.productName
-        val productPrice =itemView.findViewById<TextView>(R.id.productPrice)
-        fun bindProducts(product:Product,context: Context){
+        val productPrice=itemView.findViewById<TextView>(R.id.productPrice)
+        fun bindProduct(product:Product,context: Context){
             val resourceId =context.resources.getIdentifier(product.image,"drawable",
                     context.packageName)
             productsImage.setImageResource(resourceId)

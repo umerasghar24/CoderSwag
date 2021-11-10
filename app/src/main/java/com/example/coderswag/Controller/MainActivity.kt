@@ -1,12 +1,15 @@
 package com.example.coderswag.Controller
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Adapter
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.coderswag.Adapters.CategoryAdapter
 import com.example.coderswag.Adapters.CategoryRecycleAdapter

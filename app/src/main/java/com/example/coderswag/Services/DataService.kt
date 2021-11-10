@@ -44,11 +44,11 @@ object DataService { ///singleton onject //create arrays that will hold all of t
     )
     val digital = listOf<Product>()
 
-    fun getProducts(category: String):List<Product>{ //using when,if user click on shirts return shirts so on
+    fun getProducts(category: String?):List<Product>{ //using when,if user click on shirts return shirts so on
         return when(category){
-            "Shirts"-> shirts
-            "Hoodies"-> hoodies
-            "Hats"-> hats
+            "SHIRTS"-> shirts
+            "HOODIES"-> hoodies
+            "HATS"-> hats
             else -> digital
         }
 
