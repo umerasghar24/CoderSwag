@@ -43,6 +43,7 @@ object DataService { ///singleton onject //create arrays that will hold all of t
         Product("Kickflip Studios","$18","shirt5")
     )
     val digital = listOf<Product>()
+
     fun getProducts(category: String):List<Product>{ //using when,if user click on shirts return shirts so on
         return when(category){
             "Shirts"-> shirts
