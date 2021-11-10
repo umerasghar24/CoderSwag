@@ -13,6 +13,7 @@ import com.example.coderswag.Adapters.ProductsAdapter
 import com.example.coderswag.R
 import com.example.coderswag.Services.DataService
 import com.example.coderswag.Utilities.EXTRA_CATEGORIES
+import com.example.coderswag.Utilities.EXTRA_PRODUCTS
 import kotlinx.android.synthetic.main.activity_products.*
 
 class ProductsActivity : AppCompatActivity() {
@@ -22,10 +23,12 @@ class ProductsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_products)
        val categoryType= intent.getStringExtra(EXTRA_CATEGORIES)
         Log.e("ProductsActivity","categoryType = $categoryType")
-        adapter = ProductsAdapter(this,DataService.getProducts(categoryType))
-        val layoutManager = GridLayoutManager(this,2) //how many columns you want in layout
-        productsListView.layoutManager=layoutManager
-        productsListView.adapter=adapter
+        adapter = ProductsAdapter(this,DataService.getProducts(categoryType),) {product->
+            val productDetailIntent = Intent(this,ProductDetailActivity::class.java)
+            productDetailIntent.putExtra(EXTRA_PRODUCTS,product)
+            startActivity(productDetailIntent)
+        }
+
         var spanCount =3 //column in layout
         var orientation=resources.configuration.orientation
         if (orientation== Configuration.ORIENTATION_LANDSCAPE){
@@ -35,6 +38,9 @@ class ProductsActivity : AppCompatActivity() {
         if (screenSize>720){
             spanCount=3
         }
+        val layoutManager = GridLayoutManager(this,2) //how many columns you want in layout
+        productsListView.layoutManager=layoutManager
+        productsListView.adapter=adapter
 
 
 
